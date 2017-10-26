@@ -733,6 +733,7 @@ function! s:Git(bang, args) abort
     endif
     execute 'lcd' fnameescape(dir)
     execute 'terminal' git args
+    startinsert
   else
     call s:ExecuteInTree('!'.git.' '.args)
     if has('win32')
